@@ -6,5 +6,5 @@ load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
-db = client.get_database("task_manager")
+db = client.get_database("task_manager")# database name
 collection = db["tasks"]

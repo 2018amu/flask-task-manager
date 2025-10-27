@@ -1,3 +1,4 @@
+//ensures that code only runs after all HTML elements are ready in the DOM.
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("taskForm");
   const responseMsg = document.getElementById("responseMsg");

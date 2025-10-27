@@ -33,17 +33,17 @@ def submit():
         data = request.get_json()
         required_fields = ['name', 'email', 'title', 'description', 'dueDate']
 
-        # Validate required fields
+        # Validate the  fields
         if not all(field in data and data[field] for field in required_fields):
             return jsonify({"message": "Please fill in all fields."}), 400
 
         # Insert data into MongoDB
         collection.insert_one(data)
 
-        return jsonify({"message": "Task submitted successfully!"}), 200
+        return jsonify({"message": "Task submitted successfully!"}), 200   # 200 means  the request was successful.  
 
     except Exception as e:
-        return jsonify({"message": f"An error occurred: {str(e)}"}), 500
+        return jsonify({"message": f"An error occurred: {str(e)}"}), 500  #error 
 
 
 @app.route('/test-db')
@@ -54,12 +54,12 @@ def test_db():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ------------------ MAIN ENTRY ------------------
+# ------------------ Main  ------------------
 
 
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
         port=int(os.getenv("PORT", 5000)),
-        debug=True  # you can turn this off in production
+        debug=True  
     )

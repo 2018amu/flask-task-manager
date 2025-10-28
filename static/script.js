@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const data = {
+      number:document.getElementById("tasknumber").value,
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       title: document.getElementById("title").value,

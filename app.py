@@ -33,7 +33,7 @@ def index():
 def submit():
     try:
         data = request.get_json()
-        required_fields = ['name', 'email', 'title', 'description', 'dueDate']
+        required_fields = ['number','name', 'email', 'title', 'description', 'dueDate']
         
 
         # Validate the  fields

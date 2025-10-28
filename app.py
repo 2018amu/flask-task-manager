@@ -14,6 +14,8 @@ MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client.get_database("task_manager")  # change name if needed
 
+
+
 # ------------------ ROUTES ------------------
 
 
@@ -32,6 +34,7 @@ def submit():
     try:
         data = request.get_json()
         required_fields = ['name', 'email', 'title', 'description', 'dueDate']
+        
 
         # Validate the  fields
         if not all(field in data and data[field] for field in required_fields):
@@ -53,6 +56,8 @@ def test_db():
         return jsonify({"status": "connected", "collections": collections}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+        
 
 # ------------------ Main  ------------------
 
